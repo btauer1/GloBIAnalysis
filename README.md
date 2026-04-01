@@ -1,4 +1,5 @@
 Package Name: GloBIAnalysis
+
 Contributors: Beatrice Tauer, Meghan Gram-Dinger, Nelle Feliciano
 
 Our package “GloBIAnalysis” will center around summarizing, analyzing and visualizing the Global Biotic Interactions curated bee-plant datasets (https://zenodo.org/records/18303036). Interactions between insects and plants play an important role in the maintenance of ecological communities and the overall health of ecosystems. These 3 related datasets examine the interactions between bees and plants across a range of species and geographic distributions. The variables in the data include the taxonomic identity of various bee and plant species, the location coordinates where the data was collected, and the types of interactions observed. The tasks that our package will accomplish include displaying summary statistics for both the plants and bees sampled, creating visualizations to explore the dataset, and identifying trends in the data using statistical methods. 
