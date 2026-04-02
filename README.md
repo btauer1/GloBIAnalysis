@@ -21,3 +21,7 @@ Visualization of bee-plant interactions (uses curated dataset)
 
 Trends in bee-plant interactions (uses bee-plant interactions summary data)
 1. ANOVA analysis of bee and plant population dynamics
+
+Jericho's feedback: The topic for this package is really interesting! There's definitely a lot of ways you can go with the functionality of this package, and I think the ones y'all have mentioned are a good start. The summary functions you've described might work as a single function (with the type of species/interaction as another input). The rest of the functions you've described are just fine -- these will just need to be fleshed out as you construct them over the next few weeks. One task that might be cool to implement (depending on what geographic information you have on each of the bees/species) is a map showcasing the geographic distribution of a certain bee/species. Just food for thought!
+
+This all sounds great and you all are good to continue!
