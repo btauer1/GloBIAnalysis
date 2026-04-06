@@ -4,7 +4,7 @@ Title: Analysis of the Global Biotic Interactions curated bee-plant datasets
 Version: 0.1.0
 Authors@R: c(
     person("Beatrice", "Taur", email = "btaur@smith.edu", role = c("aut", "cre")), 
-    person("Nellie", "Feliciano", email = "nfeliciano@smith.edu", role = "aut"), 
+    person("Nelle", "Feliciano", email = "nfeliciano@smith.edu", role = "aut"), 
     person("Meghan", "Gram-Dinger", email = "mgramdinger@smith.edu", role = "aut")
   )
 Description: This package is used to analyze the Global Biotic Interactions curated bee-plant datasets. 
