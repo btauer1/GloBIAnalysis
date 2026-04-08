@@ -1,4 +1,4 @@
-#' Distribution of Bee Species in interactions
+#' Distribution of Plant Species in interactions
 #'
 #' @description Add brief description to function(s)
 #' @details Specifics about functionality, inputs, etc.
@@ -10,15 +10,15 @@
 #' Put function call as example.
 #'
 
-visBeeSpecies <- function() {
+visPlantSpecies <- function() {
   library(ggplot2)
 
   # uses curated sample
   GloBI_Curated_sample |>
 
-    # get bar chart of bee species
-    ggplot(aes(y = bee_species)) +
+    # get bar chart of plant species
+    ggplot(aes(y = plant_species)) +
     geom_bar()
 }
 
-# NOTES: Very messy (even worse than bee species function), fix to make it readable
+# NOTES: Very messy, fix to make it readable
