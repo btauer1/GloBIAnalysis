@@ -11,17 +11,12 @@
 #'
 
 visInteractType <- function() {
-  library(dplyr)
+  library(ggplot2)
 
   # uses curated sample
   GloBI_Curated_sample |>
 
-    # get interaction type column
-    select(interactionTypeName) |>
-
-    # form groups based on interaction type
-    group_by(interactionTypeName) |>
-
-    # get tibble with counts for each interaction type
-    summarize(count = n())
+    # get bar chart of interaction types
+    ggplot(aes(y = interactionTypeName)) +
+    geom_bar()
 }
