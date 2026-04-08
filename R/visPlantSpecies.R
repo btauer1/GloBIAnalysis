@@ -1,4 +1,4 @@
-#' Types and counts of bee-plant interactions
+#' Distribution of Plant Species in interactions
 #'
 #' @description Add brief description to function(s)
 #' @details Specifics about functionality, inputs, etc.
@@ -10,13 +10,15 @@
 #' Put function call as example.
 #'
 
-visInteractType <- function() {
+visPlantSpecies <- function() {
   library(ggplot2)
 
   # uses curated sample
   GloBI_Curated_sample |>
 
-    # get bar chart of interaction types
-    ggplot(aes(y = interactionTypeName)) +
+    # get bar chart of plant species
+    ggplot(aes(y = plant_species)) +
     geom_bar()
 }
+
+# NOTES: Very messy, fix to make it readable

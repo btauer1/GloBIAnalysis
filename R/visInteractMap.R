@@ -1,4 +1,4 @@
-#' Types and counts of bee-plant interactions
+#' Interactive map detailing locations of bee-plant interactions
 #'
 #' @description Add brief description to function(s)
 #' @details Specifics about functionality, inputs, etc.
@@ -10,13 +10,16 @@
 #' Put function call as example.
 #'
 
-visInteractType <- function() {
-  library(ggplot2)
+visInteractMap <- function() {
+  library(leaflet)
 
-  # uses curated sample
-  GloBI_Curated_sample |>
+  places <- GloBI_Curated_sample |>
+    select(x, y)
 
-    # get bar chart of interaction types
-    ggplot(aes(y = interactionTypeName)) +
-    geom_bar()
+  # create interactive map with points
+  leaflet(places) |>
+    addTiles() |>  # Adds OpenStreetMap background
+    addMarkers(lng = ~x, lat = ~y)
 }
+
+# NOTES: Could add popups about information on the specific interactions in each place
