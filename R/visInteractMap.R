@@ -16,7 +16,7 @@ visInteractMap <- function() {
   places <- GloBI_Curated_sample |>
     select(x, y)
 
-  # create map with points
+  # create interactive map with points
   leaflet(places) |>
     addTiles() |>  # Adds OpenStreetMap background
     addMarkers(lng = ~x, lat = ~y)
