@@ -1,3 +1,14 @@
+#' Summary statistics for geographical distributions
+#'
+#' @description Function that returns INSERT SUMMARY STATISTICS
+#' @details Specifics about functionality, inputs, etc.
+#' @param x Brief description of input. (Add as many params as needed)
+#' @return Brief description of what function returns/prints.
+#' @export
+#' @import dplyr
+#' @examples
+#' Put function call as example.
+#'
 
 library(dplyr)
 
