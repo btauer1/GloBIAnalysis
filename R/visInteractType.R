@@ -18,5 +18,13 @@ visInteractType <- function() {
 
     # get bar chart of interaction types
     ggplot(aes(y = interactionTypeName)) +
-    geom_bar()
+    geom_bar() +
+
+    # count, axis, title labels
+    geom_text(stat = 'count', aes(label = after_stat(count))) +
+    labs(title = "Types of Bee-Plant Interactions",
+         x = "Number of Interactions",
+         y = "Interaction Type")
 }
+
+# NOTES: Count labels are overlapping with the bar, might want to sort by count
