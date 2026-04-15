@@ -5,26 +5,23 @@
 #' @param input Brief description of input. (Add as many params as needed)
 #' @return Brief description of what function returns/prints.
 #' @export Added here to export function to user (text not needed here)
-#' @import ggplot2
+#' @import base
 #' @examples
 #' Put function call as example.
 #'
 
 visInteractType <- function() {
-  library(ggplot2)
 
-  # uses curated sample
-  GloBI_Curated_sample |>
+  # get counts of interaction types from curated sample and sort
+  counts <- sort(table(GloBI_Curated_sample$interactionTypeName), decreasing = FALSE)
 
-    # get bar chart of interaction types
-    ggplot(aes(y = interactionTypeName)) +
-    geom_bar() +
-
-    # count, axis, title labels
-    geom_text(stat = 'count', aes(label = after_stat(count))) +
-    labs(title = "Types of Bee-Plant Interactions",
-         x = "Number of Interactions",
-         y = "Interaction Type")
+  # make bar plot
+  barplot(counts,
+          horiz = TRUE, # put interaction types on y-axis
+          las = 1, # make text horizontal
+          main = "Distribution of Bee-Plant Interaction Types",
+          xlab = "Number of Interactions",
+          ylab = "Interaction Type")
 }
 
-# NOTES: Count labels are overlapping with the bar, might want to sort by count
+# NOTES: Count labels are overlapping with the bar
