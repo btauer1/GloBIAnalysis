@@ -1,11 +1,11 @@
 #' Summary statistics for bees
 #'
 #' @description Function that returns summary of bee observations by species, genus, tribe, and family
-#' @details none
-#' @param Inputs: none, works automatically on GloBI_Curated_sample data
+#' @details Designed to work automatically on GloBI_Curated_sample data
+#' @param input None
 #' @return Prints number of unique bee species, genuses, tribes, and families. Also returns a table of the number of observations for each species.
 #' @export
-#' @import package Import package used to supplement function. (Add as many as needed)
+#' @import
 #' @examples
 #' summaryBee()
 #'
@@ -20,13 +20,13 @@ summaryBee <- function() {
   n_family <- length(unique(data$bee_family))
 
   #number of bees per species
-  species <- table(data$bee_species)
+  species <- data.frame(table(data$bee_species)) |> rename(speciesName = Var1)
 
   cat("There are ", n_species, " species of bees in this data. \n",
         "This includes ", n_genus, " genuses, ", n_tribe, " tribes, and ", n_family, " families. \n",
-        "That's a lot of bees!")
+        "That's a lot of bees! \n")
 
   print("Here's the breakdown of bee species: ")
-  species
+  print(species)
 
 }
