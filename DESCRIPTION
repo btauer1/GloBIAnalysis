@@ -23,6 +23,9 @@ BugReports: https://github.com/btauer1/GloBIAnalysis/issues
 RoxygenNote: 7.3.3
 Depends: 
     R (>= 3.5)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Imports:
     dplyr,
     ggplot2,

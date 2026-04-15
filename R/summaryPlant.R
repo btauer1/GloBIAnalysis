@@ -1,15 +1,30 @@
 #' Summary statistics for plants
 #'
-#' @description Function that returns [INSERT SUMMARY STATISTICS]
-#' @details Specifics about functionality, inputs, etc.
-#' @param input Brief description of input. (Add as many params as needed)
-#' @return Brief description of what function returns/prints.
-#' @export Added here to export function to user (text not needed here)
-#' @import package Import package used to supplement function. (Add as many as needed)
+#' @description Function that returns summary of plant species in the GloBI curated data.
+#' @details Designed to work automatically on GloBI_Curated_sample data
+#' @param input None
+#' @return Prints number of unique plant species, genuses and families. Also returns a table of the number of observations for each species.
+#' @export
+#' @import
 #' @examples
-#' Put function call as example.
+#' summaryPlant()
 #'
 
-summaryPlant <- function(x) {
-  # INSERT STUFF HERE
+data <- GloBI_Curated_sample
+
+summaryPlant <- function() {
+  #number of plants in each category
+  n_species <- length(unique(data$plant_genus))
+  n_genus <- length(unique(data$plant_genus))
+  n_family <- length(unique(data$plant_family))
+
+  #number of plants per species
+  species <- data.frame(table(data$plant_species)) |> rename(speciesName = Var1)
+
+  cat("There are ", n_species, " species of plants in this data. \n",
+      "This includes ", n_genus, " genuses, and ", n_family, " families. \n",
+      "That's a lot of plants! \n")
+
+  print("Here's the breakdown of plant species: ")
+  print(species)
 }
