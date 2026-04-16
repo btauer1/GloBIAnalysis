@@ -16,9 +16,15 @@ visInteractMap <- function() {
   places <- GloBI_Curated_sample |>
     select(x, y)
 
+  lng1 <- min(places$x)
+  lng2 <- max(places$x)
+  lat1 <- min(places$y)
+  lat2 <- max(places$y)
+
   # create interactive map with points
   leaflet(places) |>
     addTiles() |>  # Adds OpenStreetMap background
+    fitBounds((lng1*1.1), (lat1*1.1), (lng2*1.1), (lat2*1.1)) |> #zooms area of interest
     addMarkers(lng = ~x, lat = ~y)
 }
 
