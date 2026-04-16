@@ -7,7 +7,7 @@
 #' @export Added here to export function to user (text not needed here)
 #' @import leaflet
 #' @examples
-#' Put function call as example.
+#' visInteractMap()
 #'
 
 visInteractMap <- function() {
