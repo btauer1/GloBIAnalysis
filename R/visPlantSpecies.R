@@ -7,7 +7,7 @@
 #' @export Added here to export function to user (text not needed here)
 #' @import ggplot2
 #' @examples
-#' Put function call as example.
+#' visPlantSpecies()
 #'
 
 visPlantSpecies <- function() {
