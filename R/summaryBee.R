@@ -5,14 +5,12 @@
 #' @param input None
 #' @return Prints number of unique bee species, genuses, tribes, and families. Also returns a table of the number of observations for each species.
 #' @export
-#' @import
 #' @examples
 #' summaryBee()
 #'
 
-data <- GloBI_Curated_sample
-
 summaryBee <- function() {
+  data <- GloBI_Curated_sample
   #number of bees in each category
   n_species <- length(unique(data$bee_genus))
   n_genus <- length(unique(data$bee_genus))

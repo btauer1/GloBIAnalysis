@@ -19,6 +19,6 @@ Add brief description to function(s)
 Specifics about functionality, inputs, etc.
 }
 \examples{
-Put function call as example.
+visBeeSpecies()
 
 }

@@ -1,0 +1,14 @@
+Hi Nelle, Beatrice, and Meghan,
+
+Thanks for the package! I think y'all have made some good progress on the code. The next steps will be refining the code and documentation such that they can run successfully (as well as the examples). Some comments:
+
+- Substantial progress in each function of the code! I see the comments in each of the files, and these will be things to work on as you move towards the second checkpoint.
+- There were some documentation errors that I have fixed at least in this branch. You're free to implement them into the main branch. Most of it is a result of the Roxygen2 template still used for some function files, which tries to interpret the placeholders as actual items to put in the help files.
+- The "block must have an @name tag" error is a result of using `library(dplyr)` in those files. You do not need to load in the dplyr package in your function since it will be loaded in automatically when your package is loaded (thanks to using the @import tag).
+- No need to use the `library()` commands in your function. The reason is that the @import tag will automatically import the needed package as the function works through the code.
+- The data references above the functions have been moved inside such that your created functions can run. You do not want to have anything outside the function as that will trigger an error.
+- Base package does not need to be imported.
+- The visible binding notes -- this will occur naturally as a result of using ggplot2 in your package. This is totally okay for this package, however, if you find the notes to bother y'all, you can take a look at this StackOverflow article regarding workarounds with this issue: https://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when
+- The warnings you will currently get are a result of objects/datasets not having documentation.
+
+

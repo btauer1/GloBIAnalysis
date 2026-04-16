@@ -5,14 +5,12 @@
 #' @param input None
 #' @return Prints number of unique plant species, genuses and families. Also returns a table of the number of observations for each species.
 #' @export
-#' @import
 #' @examples
 #' summaryPlant()
 #'
 
-data <- GloBI_Curated_sample
-
 summaryPlant <- function() {
+  data <- GloBI_Curated_sample
   #number of plants in each category
   n_species <- length(unique(data$plant_genus))
   n_genus <- length(unique(data$plant_genus))

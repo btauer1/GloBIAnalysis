@@ -14,7 +14,6 @@ Description: This package is used to analyze the Global Biotic Interactions cura
     distribution of the observations and the types of interactions recorded. Interactions between bees and plants
     can be easily visualized using the functions included in this package, and it also enables a simplified ANOVA
     analysis of the affect of bee-plant interactions on bee and plant populations.
-Data source: https://zenodo.org/records/18303036
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -6,11 +6,8 @@
 #' @return Brief description of what function returns/prints.
 #' @export
 #' @import dplyr
-#' @examples
-#' Put function call as example.
 #'
 
-library(dplyr)
 
 summaryGeo <- function(x) {
 

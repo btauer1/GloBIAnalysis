@@ -4,14 +4,13 @@
 #' @details Specifics about functionality, inputs, etc.
 #' @param input Brief description of input. (Add as many params as needed)
 #' @return Brief description of what function returns/prints.
-#' @export Added here to export function to user (text not needed here)
+#' @export
 #' @import ggplot2
 #' @examples
-#' Put function call as example.
+#' visPlantSpecies()
 #'
 
 visPlantSpecies <- function() {
-  library(ggplot2)
 
   # uses curated sample
   GloBI_Curated_sample |>

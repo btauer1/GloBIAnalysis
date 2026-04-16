@@ -4,10 +4,9 @@
 #' @details Specifics about functionality, inputs, etc.
 #' @param input Brief description of input. (Add as many params as needed)
 #' @return Brief description of what function returns/prints.
-#' @export Added here to export function to user (text not needed here)
-#' @import base
+#' @export
 #' @examples
-#' Put function call as example.
+#' visInteractType()
 #'
 
 visInteractType <- function() {

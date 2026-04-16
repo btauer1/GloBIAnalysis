@@ -4,21 +4,21 @@
 \alias{summaryPlant}
 \title{Summary statistics for plants}
 \usage{
-summaryPlant(x)
+summaryPlant()
 }
 \arguments{
-\item{input}{Brief description of input. (Add as many params as needed)}
+\item{input}{None}
 }
 \value{
-Brief description of what function returns/prints.
+Prints number of unique plant species, genuses and families. Also returns a table of the number of observations for each species.
 }
 \description{
-Function that returns [INSERT SUMMARY STATISTICS]
+Function that returns summary of plant species in the GloBI curated data.
 }
 \details{
-Specifics about functionality, inputs, etc.
+Designed to work automatically on GloBI_Curated_sample data
 }
 \examples{
-Put function call as example.
+summaryPlant()
 
 }

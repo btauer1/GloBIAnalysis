@@ -10,11 +10,8 @@
 #' summaryInteract()
 #'
 
-library(dplyr)
-
-data <- GloBI_Curated_sample
-
 summaryInteract <- function() {
+  data <- GloBI_Curated_sample
 
   #table of interactions and species
   interactions <- data |>
