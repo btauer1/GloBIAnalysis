@@ -7,11 +7,10 @@
 #' @export Added here to export function to user (text not needed here)
 #' @import package Import package used to supplement function. (Add as many as needed)
 #' @examples
-#' Put function call as example.
+#' visPlantSpecies()
 #'
 
 visPlantSpecies <- function() {
-  library(ggplot2)
 
   # uses curated sample
   GloBI_Curated_sample |>

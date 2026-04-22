@@ -7,18 +7,23 @@
 #' @export Added here to export function to user (text not needed here)
 #' @import package Import package used to supplement function. (Add as many as needed)
 #' @examples
-#' Put function call as example.
+#' visInteractMap()
 #'
 
 visInteractMap <- function() {
-  library(leaflet)
 
   places <- GloBI_Curated_sample |>
     select(x, y)
 
+  lng1 <- min(places$x)
+  lng2 <- max(places$x)
+  lat1 <- min(places$y)
+  lat2 <- max(places$y)
+
   # create interactive map with points
   leaflet(places) |>
     addTiles() |>  # Adds OpenStreetMap background
+    fitBounds((lng1*1.1), (lat1*1.1), (lng2*1.1), (lat2*1.1)) |> #zooms area of interest
     addMarkers(lng = ~x, lat = ~y)
 }
 
