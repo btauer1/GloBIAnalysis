@@ -7,9 +7,9 @@
 #' @param filter filter to apply to variable, defaults to NULL
 #' @return Brief description of what function returns/prints.
 #' @export Added here to export function to user (text not needed here)
-#' @import leaflet
+#' @import package Import package used to supplement function. (Add as many as needed)
 #' @examples
-#' Put function call as example.
+#' visInteractMap()
 #'
 
 visInteractMap <- function(data = GloBI_Curated_sample, by = NULL, filter = NULL) {

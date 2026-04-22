@@ -5,7 +5,6 @@
 #' @param input None
 #' @return Prints number of unique bee species, genuses, tribes, and families. Also returns a table of the number of observations for each species.
 #' @export
-#' @import
 #' @examples
 #' summaryBee()
 #'

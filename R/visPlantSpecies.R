@@ -5,20 +5,20 @@
 #' @param input Brief description of input. (Add as many params as needed)
 #' @return Brief description of what function returns/prints.
 #' @export Added here to export function to user (text not needed here)
-#' @import ggplot2
+#' @import package Import package used to supplement function. (Add as many as needed)
 #' @examples
-#' Put function call as example.
+#' visPlantSpecies()
 #'
 
 visPlantSpecies <- function() {
-  library(ggplot2)
 
-  # uses curated sample
   GloBI_Curated_sample |>
-
-    # get bar chart of plant species
-    ggplot(aes(y = plant_species)) +
+    ggplot(aes(y = plant_species,
+               fill = plant_family)) +
+    labs(title = "Distribution of Plant Species",
+         y = "Plant Species",
+         fill = "Plant Family") +
     geom_bar()
 }
 
-# NOTES: Very messy, fix to make it readable
+# WORK IN PROGRESS, VERY MESSY
