@@ -12,12 +12,13 @@
 
 visPlantSpecies <- function() {
 
-  # uses curated sample
   GloBI_Curated_sample |>
-
-    # get bar chart of plant species
-    ggplot(aes(y = plant_species)) +
+    ggplot(aes(y = plant_species,
+               fill = plant_family)) +
+    labs(title = "Distribution of Plant Species",
+         y = "Plant Species",
+         fill = "Plant Family") +
     geom_bar()
 }
 
-# NOTES: Very messy, fix to make it readable
+# WORK IN PROGRESS, VERY MESSY

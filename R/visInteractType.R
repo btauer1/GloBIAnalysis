@@ -1,10 +1,15 @@
 #' Types and counts of bee-plant interactions
 #'
-#' @description Add brief description to function(s)
-#' @details Specifics about functionality, inputs, etc.
-#' @param input Brief description of input. (Add as many params as needed)
-#' @return Brief description of what function returns/prints.
-#' @export Added here to export function to user (text not needed here)
+#' @description This function generates a bar plot of bee-plant interaction types within the GloBI_Curated_sample dataset.
+#'
+#' @details This function allows a user to explore the distribution of bee-plant interaction types.
+#' Users are able to view how bees and plants most commonly interact.
+#' This function requires no input.
+#'
+#' @return This function returns a bar plot of the types of bee-plant interactions.
+#'
+#' @export
+#'
 #' @examples
 #' visInteractType()
 #'
