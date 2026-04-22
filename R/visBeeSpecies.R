@@ -1,24 +1,46 @@
-#' Distribution of Bee Species in interactions
+#' Distribution of Bee Species by Family in sample dataset
 #'
-#' @description Add brief description to function(s)
-#' @details Specifics about functionality, inputs, etc.
-#' @param input Brief description of input. (Add as many params as needed)
-#' @return Brief description of what function returns/prints.
-#' @export Added here to export function to user (text not needed here)
-#' @import package Import package used to supplement function. (Add as many as needed)
+#' @description This function generates a bar plot of bee species within the GloBI_Curated_sample dataset.
+#' The user has the option to specify the bee family they wish to see the species of.
+#'
+#' @details This function is used to explore the types of bee species within the GloBI_Curated_sample dataset.
+#' Users are able to view counts of each bee species and how they vary by bee family.
+#'
+#' @param family A character string specifying which bee family the user wants to plot.
+#' This parameter is optional and is not necessary to run the function.
+#'
+#' @return If no input is provided, this function returns a bar plot of bee species that is color-coded by its corresponding bee family.
+#' If a bee family is specified, it generates a bar plot of bee species that belong to the specified family.
+#'
+#' @export
+#' @import ggplot2
+#'
 #' @examples
-#' Put function call as example.
-#'
+#' visBeeSpecies()
+#' visBeeSpecies("Apidae")
 
-visBeeSpecies <- function() {
-  library(ggplot2)
+visBeeSpecies <- function(family = NULL) {
 
-  # uses curated sample
-  GloBI_Curated_sample |>
+  # if no family argument provided, show general view of bee species & families
+  if(is.null(family)) {
+    GloBI_Curated_sample |>
+      ggplot(aes(y = bee_species,
+                 fill = bee_family)) +
+      labs(title = "Distribution of Bee Species",
+           y = "Bee Species",
+           fill = "Bee Family") +
+      geom_bar()
+  }
 
-    # get bar chart of bee species
-    ggplot(aes(y = bee_species)) +
-    geom_bar()
+  # else show view of specific family
+  else {
+    GloBI_Curated_sample |>
+      filter(bee_family == family) |>
+      ggplot(aes(y = bee_species)) +
+      labs(title = "Distribution of Bee Species",
+           y = "Bee Species") +
+      geom_bar()
+  }
 }
 
-# NOTES: Very messy (even worse than bee species function), fix to make it readable
+

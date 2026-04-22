@@ -2,23 +2,27 @@
 % Please edit documentation in R/visBeeSpecies.R
 \name{visBeeSpecies}
 \alias{visBeeSpecies}
-\title{Distribution of Bee Species in interactions}
+\title{Distribution of Bee Species by Family in sample dataset}
 \usage{
-visBeeSpecies()
+visBeeSpecies(family = NULL)
 }
 \arguments{
-\item{input}{Brief description of input. (Add as many params as needed)}
+\item{family}{A character string specifying which bee family the user wants to plot.
+This parameter is optional and is not necessary to run the function.}
 }
 \value{
-Brief description of what function returns/prints.
+If no input is provided, this function returns a bar plot of bee species that is color-coded by its corresponding bee family.
+If a bee family is specified, it generates a bar plot of bee species that belong to the specified family.
 }
 \description{
-Add brief description to function(s)
+This function generates a bar plot of bee species within the GloBI_Curated_sample dataset.
+The user has the option to specify the bee family they wish to see the species of.
 }
 \details{
-Specifics about functionality, inputs, etc.
+This function is used to explore the types of bee species within the GloBI_Curated_sample dataset.
+Users are able to view counts of each bee species and how they vary by bee family.
 }
 \examples{
-Put function call as example.
-
+visBeeSpecies()
+visBeeSpecies("Apidae")
 }
