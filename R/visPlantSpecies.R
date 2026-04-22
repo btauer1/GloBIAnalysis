@@ -11,7 +11,6 @@
 #'
 
 visPlantSpecies <- function() {
-  library(ggplot2)
 
   # uses curated sample
   GloBI_Curated_sample |>

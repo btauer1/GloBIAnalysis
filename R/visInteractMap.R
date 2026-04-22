@@ -11,7 +11,6 @@
 #'
 
 visInteractMap <- function() {
-  library(leaflet)
 
   places <- GloBI_Curated_sample |>
     select(x, y)
