@@ -5,7 +5,7 @@
 #' @param input Brief description of input. (Add as many params as needed)
 #' @return Brief description of what function returns/prints.
 #' @export Added here to export function to user (text not needed here)
-#' @import leaflet
+#' @import package Import package used to supplement function. (Add as many as needed)
 #' @examples
 #' visInteractMap()
 #'
