@@ -10,8 +10,6 @@
 #' Put function call as example.
 #'
 
-library(dplyr)
-
 summaryGeo <- function(x) {
 
   # uses curated sample
