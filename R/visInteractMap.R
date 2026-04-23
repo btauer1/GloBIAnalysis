@@ -7,13 +7,12 @@
 #' @param filter filter to apply to variable, defaults to NULL
 #' @return Brief description of what function returns/prints.
 #' @export Added here to export function to user (text not needed here)
-#' @import package Import package used to supplement function. (Add as many as needed)
+#' @import leaflet
 #' @examples
 #' visInteractMap()
 #'
 
 visInteractMap <- function(data = GloBI_Curated_sample, by = NULL, filter = NULL) {
-  library(leaflet)
 
   if (is.null(by) & is.null(filter)) {
     places <- data |>
