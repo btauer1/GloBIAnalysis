@@ -10,8 +10,6 @@
 #' summaryInteract()
 #'
 
-library(dplyr)
-
 data <- GloBI_Curated_sample
 
 summaryInteract <- function() {
