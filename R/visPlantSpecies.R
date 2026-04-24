@@ -1,4 +1,4 @@
-#' Distribution of Plant Species in interactions
+#' Distribution of Plant Species within each Family
 #'
 #' @description Add brief description to function(s)
 #' @details Specifics about functionality, inputs, etc.
@@ -10,15 +10,22 @@
 #' visPlantSpecies()
 #'
 
-visPlantSpecies <- function() {
+visPlantSpecies <- function(family) {
 
-  GloBI_Curated_sample |>
-    ggplot(aes(y = plant_species,
-               fill = plant_family)) +
+  # error if user wants Asteraceae family
+  if (family == "Asteraceae") {
+    stop("Data is unfit for visualization: The Asteraceae family contains 295 unique species")
+  }
+
+  # separate data for specified family
+  fam_data <- GloBI_Curated_sample |>
+    filter(plant_family == family)
+
+  # make bar plot
+  fam_data |>
+    ggplot(aes(y = plant_species)) +
     labs(title = "Distribution of Plant Species",
-         y = "Plant Species",
-         fill = "Plant Family") +
+         subtitle = paste(family, "family"),
+         y = "Plant Species") +
     geom_bar()
 }
-
-# WORK IN PROGRESS, VERY MESSY
