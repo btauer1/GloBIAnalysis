@@ -9,9 +9,10 @@
 #' summaryBee()
 #'
 
-data <- GloBI_Curated_sample
-
 summaryBee <- function() {
+
+  data <- GloBI_Curated_sample
+
   #number of bees in each category
   n_species <- length(unique(data$bee_species))
   n_genus <- length(unique(data$bee_genus))

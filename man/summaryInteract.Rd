@@ -4,21 +4,22 @@
 \alias{summaryInteract}
 \title{Summary statistics for interactions}
 \usage{
-summaryInteract(x)
+summaryInteract()
 }
 \arguments{
-\item{input}{Brief description of input. (Add as many params as needed)}
+\item{input}{none}
 }
 \value{
-Brief description of what function returns/prints.
+Prints a tibble summarizing the number of each interaction type, and counts of bee and plant species involved in each type of interaction.
 }
 \description{
-Function that returns [INSERT SUMMARY STATISTICS]
+Function that returns table of observations and species numbers per interaction type.
 }
 \details{
-Specifics about functionality, inputs, etc.
+Works automatically on GloBI_Curated_sample data set.
 }
 \examples{
-Put function call as example.
+
+summaryInteract()
 
 }
