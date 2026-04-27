@@ -8,8 +8,8 @@
 #' @export
 #' @import stats
 #' @examples
-#' anovaPop(bee, 0.05)
-#' anovaPop(plant, 0.1)
+#' anovaPop("bee", 0.05)
+#' anovaPop("plant", 0.1)
 #'
 
 

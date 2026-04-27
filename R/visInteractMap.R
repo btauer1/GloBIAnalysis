@@ -46,12 +46,12 @@ visInteractMap <- function(data = GloBI_Curated_sample, by = NULL, filter = NULL
   leaflet(places) |>
     addTiles() |>  # Adds OpenStreetMap background
     fitBounds((lng1*1.1), (lat1*1.1), (lng2*1.1), (lat2*1.1)) |> #zooms area of interest
-    addcircleMarkers(lng = ~x, lat = ~y)}
+    addCircleMarkers(lng = ~x, lat = ~y)}
 
   if (by_tf == TRUE){
     RdYlBu <- colorFactor("RdYlBu", domain = data$by)
     leaflet(places) |>
       addTiles() |>  # Adds OpenStreetMap background
       fitBounds((lng1*1.1), (lat1*1.1), (lng2*1.1), (lat2*1.1)) |> #zooms area of interest
-      addcircleMarkers(lng = ~x, lat = ~y, color = ~RdYlBu(data$by))}
+      addCircleMarkers(lng = ~x, lat = ~y, color = ~RdYlBu(data$by))}
 }
