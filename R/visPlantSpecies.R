@@ -38,3 +38,5 @@ visPlantSpecies <- function(family) {
          y = "Plant Species") +
     geom_bar()
 }
+
+# NOTE: plant_family not found error
