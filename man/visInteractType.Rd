@@ -6,17 +6,16 @@
 \usage{
 visInteractType()
 }
-\arguments{
-\item{input}{Brief description of input. (Add as many params as needed)}
-}
 \value{
-Brief description of what function returns/prints.
+This function returns a bar plot of the types of bee-plant interactions.
 }
 \description{
-Add brief description to function(s)
+This function generates a bar plot of bee-plant interaction types within the GloBI_Curated_sample dataset.
 }
 \details{
-Specifics about functionality, inputs, etc.
+This function allows a user to explore the distribution of bee-plant interaction types.
+Users are able to view how bees and plants most commonly interact.
+This function requires no input.
 }
 \examples{
 visInteractType()
