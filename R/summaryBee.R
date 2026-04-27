@@ -13,7 +13,7 @@ data <- GloBI_Curated_sample
 
 summaryBee <- function() {
   #number of bees in each category
-  n_species <- length(unique(data$bee_genus))
+  n_species <- length(unique(data$bee_species))
   n_genus <- length(unique(data$bee_genus))
   n_tribe <- length(unique(data$bee_tribe))
   n_family <- length(unique(data$bee_family))
