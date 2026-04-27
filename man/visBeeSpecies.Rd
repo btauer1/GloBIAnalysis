@@ -3,6 +3,7 @@
 \name{visBeeSpecies}
 \alias{visBeeSpecies}
 \title{Distribution of Bee Species by Family}
+>>>>>>> 356991efe1a1206df92964a6ecd43fc269aede2e
 \usage{
 visBeeSpecies(family = NULL)
 }

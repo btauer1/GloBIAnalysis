@@ -9,9 +9,10 @@
 #' summaryPlant()
 #'
 
-data <- GloBI_Curated_sample
-
 summaryPlant <- function() {
+
+  data <- GloBI_Curated_sample
+
   #number of plants in each category
   n_species <- length(unique(data$plant_genus))
   n_genus <- length(unique(data$plant_genus))

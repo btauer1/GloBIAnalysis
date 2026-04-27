@@ -12,10 +12,11 @@
 #' anovaPop(plant, 0.1)
 #'
 
-data <- GloBI_Curated_sample
 
 #group is plant_endemic or bee_endemic
 anovaPop <- function(group, level){
+
+  data <- GloBI_Curated_sample
 
   #check group is valid
   group <- as.character(group)
