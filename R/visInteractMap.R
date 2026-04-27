@@ -2,18 +2,39 @@
 #'
 #' @description Add brief description to function(s)
 #' @details Specifics about functionality, inputs, etc.
-#' @param input Brief description of input. (Add as many params as needed)
+#' @param data GloBI data, defaults to GloBI_Curated_sample
+#' @param by variable to color by, defaults to NULL
+#' @param filter filter to apply to variable, defaults to NULL
 #' @return Brief description of what function returns/prints.
 #' @export Added here to export function to user (text not needed here)
-#' @import package Import package used to supplement function. (Add as many as needed)
+#' @import leaflet
 #' @examples
 #' visInteractMap()
 #'
 
-visInteractMap <- function() {
+visInteractMap <- function(data = GloBI_Curated_sample, by = NULL, filter = NULL) {
 
-  places <- GloBI_Curated_sample |>
-    select(x, y)
+  if (is.null(by) & is.null(filter)) {
+    places <- data |>
+      filter(coordinated == TRUE) |>
+      select(x, y)
+    by_tf <- FALSE}
+  if (is.null(by) & !is.null(filter)) {
+    warnings("filter can only be applied with a supplied by variable")
+    places <- data |>
+      filter(coordinated == TRUE) |>
+      select(x, y)
+    by_tf <- FALSE}
+  if (!is.null(by) & is.null(filter)) {
+    (places <- data |>
+       filter(coordinated == TRUE) |>
+       select(x, y))
+    by_tf <- TRUE}
+  if (!is.null(by) & !is.null(filter)) {
+    places <- data |>
+      filter(coordinated == TRUE & data$by == filter) |>
+      select(x, y)
+    by_tf <- FALSE}
 
   lng1 <- min(places$x)
   lng2 <- max(places$x)
@@ -21,10 +42,16 @@ visInteractMap <- function() {
   lat2 <- max(places$y)
 
   # create interactive map with points
+  if (by_tf == FALSE){
   leaflet(places) |>
     addTiles() |>  # Adds OpenStreetMap background
     fitBounds((lng1*1.1), (lat1*1.1), (lng2*1.1), (lat2*1.1)) |> #zooms area of interest
-    addMarkers(lng = ~x, lat = ~y)
-}
+    addcircleMarkers(lng = ~x, lat = ~y)}
 
-# NOTES: Could add popups about information on the specific interactions in each place
+  if (by_tf == TRUE){
+    RdYlBu <- colorFactor("RdYlBu", domain = data$by)
+    leaflet(places) |>
+      addTiles() |>  # Adds OpenStreetMap background
+      fitBounds((lng1*1.1), (lat1*1.1), (lng2*1.1), (lat2*1.1)) |> #zooms area of interest
+      addcircleMarkers(lng = ~x, lat = ~y, color = ~RdYlBu(data$by))}
+}

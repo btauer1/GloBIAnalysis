@@ -2,23 +2,26 @@
 % Please edit documentation in R/visPlantSpecies.R
 \name{visPlantSpecies}
 \alias{visPlantSpecies}
-\title{Distribution of Plant Species in interactions}
+\title{Distribution of Plant Species within each Family}
 \usage{
-visPlantSpecies()
+visPlantSpecies(family)
 }
 \arguments{
-\item{input}{Brief description of input. (Add as many params as needed)}
+\item{family}{A character string specifying which plant family the user wants to plot.}
 }
 \value{
-Brief description of what function returns/prints.
+This function returns a bar plot of plant species that belong to the specified plant family.
 }
 \description{
-Add brief description to function(s)
+This function generates a bar plot of plant species within the plant family chosen by the user.
+The data used belongs to the GloBI_Curated_sample dataset.
 }
 \details{
-Specifics about functionality, inputs, etc.
+This function is used to explore the types of plant species and families within the GloBI_Curated_sample dataset.
+Users are able to view counts of each plant species within the chosen plant family.
+This function requires ggplot2 and dplyr.
 }
 \examples{
-visPlantSpecies()
+visPlantSpecies("Convolvulaceae")
 
 }

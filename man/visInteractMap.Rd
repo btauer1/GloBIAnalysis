@@ -4,10 +4,14 @@
 \alias{visInteractMap}
 \title{Interactive map detailing locations of bee-plant interactions}
 \usage{
-visInteractMap()
+visInteractMap(data = GloBI_Curated_sample, by = NULL, filter = NULL)
 }
 \arguments{
-\item{input}{Brief description of input. (Add as many params as needed)}
+\item{data}{GloBI data, defaults to GloBI_Curated_sample}
+
+\item{by}{variable to color by, defaults to NULL}
+
+\item{filter}{filter to apply to variable, defaults to NULL}
 }
 \value{
 Brief description of what function returns/prints.

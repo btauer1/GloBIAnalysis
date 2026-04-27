@@ -1,10 +1,11 @@
-#' Distribution of Bee Species by Family in sample dataset
+#' Distribution of Bee Species by Family
 #'
 #' @description This function generates a bar plot of bee species within the GloBI_Curated_sample dataset.
 #' The user has the option to specify the bee family they wish to see the species of.
 #'
 #' @details This function is used to explore the types of bee species within the GloBI_Curated_sample dataset.
 #' Users are able to view counts of each bee species and how they vary by bee family.
+#' This function requires ggplot2.
 #'
 #' @param family A character string specifying which bee family the user wants to plot.
 #' This parameter is optional and is not necessary to run the function.
@@ -42,5 +43,3 @@ visBeeSpecies <- function(family = NULL) {
       geom_bar()
   }
 }
-
-

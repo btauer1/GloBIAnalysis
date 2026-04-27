@@ -2,7 +2,8 @@
 % Please edit documentation in R/visBeeSpecies.R
 \name{visBeeSpecies}
 \alias{visBeeSpecies}
-\title{Distribution of Bee Species by Family in sample dataset}
+\title{Distribution of Bee Species by Family}
+>>>>>>> 356991efe1a1206df92964a6ecd43fc269aede2e
 \usage{
 visBeeSpecies(family = NULL)
 }
@@ -21,6 +22,7 @@ The user has the option to specify the bee family they wish to see the species o
 \details{
 This function is used to explore the types of bee species within the GloBI_Curated_sample dataset.
 Users are able to view counts of each bee species and how they vary by bee family.
+This function requires ggplot2.
 }
 \examples{
 visBeeSpecies()
