@@ -2,16 +2,14 @@
 #'
 #' @description Function that returns summary of plant species in the GloBI curated data.
 #' @details Designed to work automatically on GloBI_Curated_sample data
-#' @param input None
+#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @return Prints number of unique plant species, genuses and families. Also returns a table of the number of observations for each species.
 #' @export
 #' @examples
 #' summaryPlant()
 #'
 
-summaryPlant <- function() {
-
-  data <- GloBI_Curated_sample
+summaryPlant <- function(data = GloBI_Curated_sample) {
 
   #number of plants in each category
   n_species <- length(unique(data$plant_genus))

@@ -2,8 +2,9 @@
 #'
 #' @description Function that returns if the relationship between interaction type and bee/plant endemicity is significant.
 #' @details Runs two-way ANVOA test with endemicity as the independent variable and interaction type as the dependent variable.
-#' @param input group: bee or plant, which type of endemicity is being tested
-#' @param input level: significance level of ANOVA regression
+#' @param group bee or plant, which type of endemicity is being tested
+#' @param level significance level of ANOVA regression
+#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @return Prints message saying if ANOVA is significant or not.
 #' @export
 #' @import stats
@@ -14,9 +15,7 @@
 
 
 #group is plant_endemic or bee_endemic
-anovaPop <- function(group, level){
-
-  data <- GloBI_Curated_sample
+anovaPop <- function(data = GloBI_Curated_sample, group, level){
 
   #check group is valid
   group <- as.character(group)

@@ -4,21 +4,21 @@
 \alias{summaryGeo}
 \title{Summary statistics for geographical distributions}
 \usage{
-summaryGeo(x)
+summaryGeo(data = GloBI_Curated_sample)
 }
 \arguments{
-\item{x}{Brief description of input. (Add as many params as needed)}
+\item{data}{GloBI data, defaults to GloBI_Curated_sample}
 }
 \value{
-Brief description of what function returns/prints.
+prints summary statistics for geographic distribution
 }
 \description{
-Function that returns INSERT SUMMARY STATISTICS
+Function that returns min, Q1, median, mean, Q2, max of geographical coordinate columns
 }
 \details{
-Specifics about functionality, inputs, etc.
+allows user to input any GloBI dataset.
 }
 \examples{
-Put function call as example.
+summaryGeo()
 
 }
