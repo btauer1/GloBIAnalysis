@@ -10,7 +10,7 @@
 #' summaryGeo()
 #'
 
-summaryGeo <- function(data = GloBI_Curated_sample) {
+summaryGeo <- function(data = GloBI_Curated_sample, coordinated = TRUE) {
 
   # uses curated sample
   data |>

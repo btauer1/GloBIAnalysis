@@ -1,0 +1,12 @@
+
+-	I removed the tutorial Rmd file from the vignettes folder since that was causing errors and you already have another, more fleshed-out vignette file.
+
+-	You have a coordinated == TRUE check, yet I do not see coordinated defined in the functions where you use them. I imagine you’ll want to add coordinated as an argument in your function, possibly with TRUE as a default argument.
+
+-	For the README. The descriptions you have inside look excellent! A few things to add to the README: headers (with the use of ## Header in a separate line) and some brief code that shows the installation, as well as just one quick example of how a function from your package will operate.
+
+-	Expand (and consider) some additional test case for a few of your other functions. You can mainly test for problematic inputs and various inputs.
+
+-	Going into the final checkpoint, you’ll need to fix any errors that you are getting. Currently, some undefined variables are preventing me from running some of your functions/checking your package. Those variables will need to be defined either as an argument or within your function.
+
+-	I like the creativity of the vignette walkthrough! Adding a conclusion at the end to tie together what was seen in those examples may be helpful!

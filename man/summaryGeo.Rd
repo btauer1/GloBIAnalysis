@@ -4,7 +4,7 @@
 \alias{summaryGeo}
 \title{Summary statistics for geographical distributions}
 \usage{
-summaryGeo(data = GloBI_Curated_sample)
+summaryGeo(data = GloBI_Curated_sample, coordinated = TRUE)
 }
 \arguments{
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}
