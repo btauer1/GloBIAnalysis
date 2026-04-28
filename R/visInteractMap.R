@@ -8,6 +8,7 @@
 #' @return a leaflet map of all or subset of GloBI dataset provided
 #' @export
 #' @import leaflet
+#' @import dplyr
 #' @examples
 #' visInteractMap()
 #' visInteractMap(variable = "bee_genus", filter = "Lasioglossum")
