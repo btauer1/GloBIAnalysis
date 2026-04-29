@@ -13,9 +13,7 @@
 #' anovaPop("plant", 0.1)
 #'
 
-
-#group is plant_endemic or bee_endemic
-anovaPop <- function(data = GloBI_Curated_sample, group, level){
+anovaPop <- function(group, level){
 
   #check group is valid
   group <- as.character(group)
@@ -32,20 +30,26 @@ anovaPop <- function(data = GloBI_Curated_sample, group, level){
 
   #choose endemic type
   if (group == "plant"){
-    var <- data$plant_endemic
+    var <- GloBI_Curated_sample$plant_endemic
   }
   else if (group == "bee"){
-    var <- data$bee_endemic
+    var <- GloBI_Curated_sample$bee_endemic
   }
 
   #run ANVOA test
-  anova_table <- summary(aov(var ~ interactionTypeName, data = data))
+  anova_table <- summary(aov(var ~ interactionTypeName, data = GloBI_Curated_sample))
 
-  #significance of ANVOA
-  if (anova_table[[1]]$`Pr(>F)`[1] <= level){
-    cat("This interaction IS statistically significant (p =", anova_table[[1]]$`Pr(>F)`[1], ", df =", anova_table[[1]]$Df[1], ").")
+  #extract p-value rounded to 2 decimals
+  p <- signif(anova_table[[1]]$`Pr(>F)`[1], 3)
+
+  #extract degrees of freedom
+  df <- anova_table[[1]]$Df[1]
+
+  #interpret ANVOA for user
+  if (p <= level){
+    message("The relationship between ", group, " endemicity and interaction type IS statistically significant (p = ", p, ", df = ", df, ").")
   } else {
-    cat("This interaction IS NOT statistically significant (p =", anova_table[[1]]$`Pr(>F)`[1], ", df =", anova_table[[1]]$Df[1], ").")
+    message("The relationship between ", group, " endemicity and interaction type IS NOT statistically significant (p = ", p, ", df = ", df, ").")
   }
 }
 

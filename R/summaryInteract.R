@@ -10,15 +10,19 @@
 #' summaryInteract()
 #'
 
-summaryInteract <- function(data = GloBI_Curated_sample) {
+summaryInteract <- function() {
 
   #table of interactions and species
-  interactions <- data |>
-    group_by(interactionTypeName) |>
-    summarise(n = n(),
-              n_bee_species = n_distinct(bee_species),
-              n_plant_species = n_distinct(plant_species))
+  interactions <- GloBI_Curated_sample |>
 
-  print(interactions)
+    #divide into groups based on interaction type
+    group_by(interactionTypeName) |>
+
+    #get summary for each interaction group
+    summarise(nInteractions = n(),
+              nBeeSpecies = n_distinct(bee_species),
+              nPlantSpecies = n_distinct(plant_species))
+
+  interactions
 
 }
