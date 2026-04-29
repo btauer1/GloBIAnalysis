@@ -4,10 +4,14 @@
 \alias{anovaPop}
 \title{ANOVA analysis of bee and plant population dynamics}
 \usage{
-anovaPop(group, level)
+anovaPop(data = GloBI_Curated_sample, group, level)
 }
 \arguments{
-\item{input}{level: significance level of ANOVA regression}
+\item{data}{GloBI data, defaults to GloBI_Curated_sample}
+
+\item{group}{bee or plant, which type of endemicity is being tested}
+
+\item{level}{significance level of ANOVA regression}
 }
 \value{
 Prints message saying if ANOVA is significant or not.
@@ -19,7 +23,7 @@ Function that returns if the relationship between interaction type and bee/plant
 Runs two-way ANVOA test with endemicity as the independent variable and interaction type as the dependent variable.
 }
 \examples{
-anovaPop(bee, 0.05)
-anovaPop(plant, 0.1)
+anovaPop("bee", 0.05)
+anovaPop("plant", 0.1)
 
 }

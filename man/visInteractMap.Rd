@@ -4,25 +4,26 @@
 \alias{visInteractMap}
 \title{Interactive map detailing locations of bee-plant interactions}
 \usage{
-visInteractMap(data = GloBI_Curated_sample, by = NULL, filter = NULL)
+visInteractMap(data = GloBI_Curated_sample, variable = NULL, filter = NULL)
 }
 \arguments{
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}
 
-\item{by}{variable to color by, defaults to NULL}
+\item{variable}{variable to color by, defaults to NULL}
 
 \item{filter}{filter to apply to variable, defaults to NULL}
 }
 \value{
-Brief description of what function returns/prints.
+a leaflet map of all or subset of GloBI dataset provided
 }
 \description{
-Add brief description to function(s)
+Creates a leaflet map showing the locations of bee-plant interactions.
 }
 \details{
-Specifics about functionality, inputs, etc.
+allows user to input any GloBI dataset for visualization. The leaflet style map allows for exploration of the bee-planet interaction observations.
 }
 \examples{
 visInteractMap()
+visInteractMap(variable = "bee_genus", filter = "Lasioglossum")
 
 }
