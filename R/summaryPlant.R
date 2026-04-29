@@ -11,20 +11,21 @@
 
 summaryPlant <- function() {
 
-  data <- GloBI_Curated_sample
+  #pull out number of plants in each category
+  n_species <- length(unique(GloBI_Curated_sample$plant_species))
+  n_genus <- length(unique(GloBI_Curated_sample$plant_genus))
+  n_family <- length(unique(GloBI_Curated_sample$plant_family))
 
-  #number of plants in each category
-  n_species <- length(unique(data$plant_genus))
-  n_genus <- length(unique(data$plant_genus))
-  n_family <- length(unique(data$plant_family))
 
-  #number of plants per species
-  species <- data.frame(table(data$plant_species)) |> rename(speciesName = Var1)
+  #make list of population summary
+  plantPopSummary <- list(n_species, n_genus, n_family)
+  names(plantPopSummary) <- c("Species", "Genera", "Families")
+  print(plantPopSummary)
 
-  cat("There are ", n_species, " species of plants in this data. \n",
-      "This includes ", n_genus, " genuses, and ", n_family, " families. \n",
-      "That's a lot of plants! \n")
 
-  print("Here's the breakdown of plant species: ")
+  #find the number of observations per species
+  species <- data.frame(table(GloBI_Curated_sample$plant_species)) |> rename(speciesName = Var1)
   print(species)
+
 }
+
