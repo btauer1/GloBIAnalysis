@@ -1,3 +1,8 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("visPlantSpecies works", {
+
+  # error for Asteraceae
+  expect_error(
+    visPlantSpecies("Asteraceae"),
+    "Data is unfit for visualization"
+  )
 })
