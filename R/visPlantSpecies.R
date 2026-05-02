@@ -28,13 +28,13 @@ visPlantSpecies <- function(family) {
 
   # separate data for specified family
   fam_data <- GloBI_Curated_sample |>
-    filter(plant_family == family)
+    dplyr::filter(plant_family == family)
 
   # make bar plot
   fam_data |>
-    ggplot(aes(y = plant_species)) +
-    labs(title = "Distribution of Plant Species",
+    ggplot2::ggplot(ggplot2::aes(y = plant_species)) +
+    ggplot2::labs(title = "Distribution of Plant Species",
          subtitle = paste(family, "family"),
          y = "Plant Species") +
-    geom_bar()
+    ggplot2::geom_bar()
 }
