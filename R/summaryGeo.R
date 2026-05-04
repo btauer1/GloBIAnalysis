@@ -1,19 +1,19 @@
 #' Summary statistics for geographical distributions
 #'
-#' @description Function that returns INSERT SUMMARY STATISTICS
-#' @details Specifics about functionality, inputs, etc.
-#' @param x Brief description of input. (Add as many params as needed)
-#' @return Brief description of what function returns/prints.
+#' @description Function that returns min, Q1, median, mean, Q2, max of geographical coordinate columns
+#' @details allows user to input any GloBI dataset.
+#' @param data GloBI data, defaults to GloBI_Curated_sample
+#' @return prints summary statistics for geographic distribution
 #' @export
 #' @import dplyr
 #' @examples
-#' Put function call as example.
+#' summaryGeo()
 #'
 
-summaryGeo <- function(x) {
+summaryGeo <- function(data = GloBI_Curated_sample) {
 
   # uses curated sample
-  GloBI_Curated_sample |>
+  data |>
 
     #extract observations with geographical data
     filter(coordinated == TRUE) |>
