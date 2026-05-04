@@ -1,8 +1,9 @@
+utils::globalVariables(c("coordinated", "x", "y"))
+
 #' Summary statistics for geographical distributions
 #'
 #' @description Function that returns min, Q1, median, mean, Q2, max of geographical coordinate columns
 #' @details allows user to input any GloBI dataset.
-#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @return prints summary statistics for geographic distribution
 #' @export
 #' @import dplyr
@@ -10,17 +11,17 @@
 #' summaryGeo()
 #'
 
-#summaryGeo <- function(data = GloBI_Curated_sample) {
+summaryGeo <- function() {
 
   # uses curated sample
-  #data |>
+  GloBI_Curated_sample |>
 
     #extract observations with geographical data
-    #filter(.data[["coordinated"]] == TRUE) |>
+    dplyr::filter(coordinated) |>
 
       #get geographical coordinate columns
-      #select(.data[["x"]], .data[["y"]]) |>
+      dplyr::select(x, y) |>
 
         #find min, Q1, median, mean, Q2, max of geographical coordinate columns
-        #apply(2, summary)
-#}
+        apply(2, summary)
+}

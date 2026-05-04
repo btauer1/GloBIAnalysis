@@ -4,10 +4,7 @@
 \alias{summaryPlant}
 \title{Summary statistics for plants}
 \usage{
-summaryPlant(data = GloBI_Curated_sample)
-}
-\arguments{
-\item{data}{GloBI data, defaults to GloBI_Curated_sample}
+summaryPlant()
 }
 \value{
 Prints number of unique plant species, genuses and families. Also returns a table of the number of observations for each species.

@@ -4,6 +4,7 @@
 #' @details No variables are needed. Data variable can be provided for GloBI data other than the curated sample. A variable name can be provided to get the unique entries of the variable.
 #' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @param variable Variable to color by, defaults to NULL
+#' @param print Variable to print, defaults to TRUE
 #' @return Returns a list of variables in the GloBI df or if specified
 #' @export
 #' @examples

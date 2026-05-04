@@ -1,8 +1,9 @@
+utils::globalVariables(c("GloBI_Curated_sample", "interactionTypeName", "bee_species", "plant_species"))
+#'
 #' Summary statistics for interactions
 #'
 #' @description Function that returns table of observations and species numbers per interaction type.
 #' @details allows user to input any GloBI dataset.
-#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @returns Prints a tibble summarizing the number of each interaction type, and counts of bee and plant species involved in each type of interaction.
 #' @export
 #' @import dplyr
@@ -10,15 +11,19 @@
 #' summaryInteract()
 #'
 
-summaryInteract <- function(data = GloBI_Curated_sample) {
+summaryInteract <- function() {
 
   #table of interactions and species
-  interactions <- data |>
-    group_by(interactionTypeName) |>
-    summarise(n = n(),
-              n_bee_species = n_distinct(bee_species),
-              n_plant_species = n_distinct(plant_species))
+  interactions <- GloBI_Curated_sample |>
 
-  print(interactions)
+    #divide into groups based on interaction type
+    group_by(interactionTypeName) |>
+
+    #get summary for each interaction group
+    summarise(Interactions = n(),
+              BeeSpecies = n_distinct(bee_species),
+              PlantSpecies = n_distinct(plant_species))
+
+  interactions
 
 }
