@@ -3,6 +3,7 @@
 export(anovaPop)
 export(summaryBee)
 export(summaryData)
+export(summaryGeo)
 export(summaryInteract)
 export(summaryPlant)
 export(visBeeSpecies)

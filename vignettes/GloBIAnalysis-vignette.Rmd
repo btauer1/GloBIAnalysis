@@ -85,7 +85,13 @@ visInteractType()
 I want to understand where these interactions are taking place... visually!
 
 ```{r}
-#visInteractMap()
+visInteractMap()
+```
+
+What about only interactions with the bee genus Lasioglossum?
+
+```{r}
+visInteractMap(variable = "bee_genus", filter1 = "Lasioglossum")
 ```
 
 ## Statistical analysis
