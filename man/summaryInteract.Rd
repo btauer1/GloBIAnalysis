@@ -4,10 +4,7 @@
 \alias{summaryInteract}
 \title{Summary statistics for interactions}
 \usage{
-summaryInteract(data = GloBI_Curated_sample)
-}
-\arguments{
-\item{data}{GloBI data, defaults to GloBI_Curated_sample}
+summaryInteract()
 }
 \value{
 Prints a tibble summarizing the number of each interaction type, and counts of bee and plant species involved in each type of interaction.

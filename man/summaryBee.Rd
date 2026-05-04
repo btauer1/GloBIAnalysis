@@ -4,10 +4,7 @@
 \alias{summaryBee}
 \title{Summary statistics for bees}
 \usage{
-summaryBee(data = GloBI_Curated_sample)
-}
-\arguments{
-\item{data}{GloBI data, defaults to GloBI_Curated_sample}
+summaryBee()
 }
 \value{
 Prints number of unique bee species, genuses, tribes, and families. Also returns a table of the number of observations for each species.
