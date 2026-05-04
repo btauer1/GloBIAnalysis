@@ -4,7 +4,7 @@
 \alias{summaryBee}
 \title{Summary statistics for bees}
 \usage{
-summaryBee(data = GloBI_Curated_sample)
+summaryBee()
 }
 \arguments{
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}

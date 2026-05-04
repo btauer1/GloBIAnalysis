@@ -19,9 +19,9 @@ summaryInteract <- function() {
     group_by(interactionTypeName) |>
 
     #get summary for each interaction group
-    summarise(nInteractions = n(),
-              nBeeSpecies = n_distinct(bee_species),
-              nPlantSpecies = n_distinct(plant_species))
+    summarise(Interactions = n(),
+              BeeSpecies = n_distinct(bee_species),
+              PlantSpecies = n_distinct(plant_species))
 
   interactions
 
