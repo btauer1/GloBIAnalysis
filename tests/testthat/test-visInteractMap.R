@@ -1,6 +1,6 @@
 test_that("visInteractMap", {
-  expect_snapshot(cat(visInteractMap()))
-  expect_snapshot(cat(visInteractMap(variable = "bee_genus", filter = "Lasioglossum")))
+  expect_snapshot(visInteractMap())
+  expect_snapshot(visInteractMap(variable = "bee_genus", filter = "Lasioglossum"))
   expect_error(visInteractMap(variable = "bee_genus"))
   expect_error(visInteractMap(variable = "bee_genus", filter = 7))
   })

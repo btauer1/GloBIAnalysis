@@ -1,10 +1,12 @@
+utils::globalVariables(c("GloBI_Curated_sample"))
+
 #' Interactive map detailing locations of bee-plant interactions
 #'
 #' @description Creates a leaflet map showing the locations of bee-plant interactions.
 #' @details allows user to input any GloBI dataset for visualization. The leaflet style map allows for exploration of the bee-planet interaction observations.
 #' @param data GloBI data, defaults to GloBI_Curated_sample
-#' @param variable variable to color by, defaults to NULL
-#' @param filter filter to apply to variable, defaults to NULL
+#' @param variable variable to filter by, defaults to NULL
+#' @param filter1 filter to apply to variable, defaults to NULL
 #' @return a leaflet map of all or subset of GloBI dataset provided
 #' @export
 #' @import leaflet
@@ -14,22 +16,23 @@
 #' visInteractMap(variable = "bee_genus", filter = "Lasioglossum")
 #'
 
-visInteractMap <- function(data = GloBI_Curated_sample, variable = NULL, filter = NULL) {
+visInteractMap <- function(data = GloBI_Curated_sample, variable = NULL, filter1 = NULL) {
 
-  if (is.null(variable) & is.null(filter)) {
+  if (is.null(variable) & is.null(filter1)) {
     places <- data |>
-      filter(coordinated == TRUE) |>
+      dplyr::filter(coordinated == TRUE) |>
       select(x, y)}
-  if (xor(is.null(variable), is.null(filter))) {
+  if (xor(is.null(variable), is.null(filter1))) {
     stop("you must provide both a variable and a filter or neither")}
-  if (!is.null(variable) & !is.null(filter)) {
+  if (!is.null(variable) & !is.null(filter1)) {
     if (typeof(variable) != "character"){stop("variable names must be inputted as strings/characters")}
-    if (typeof(filter) != "character"){stop("filter names must be inputted as strings/characters")}
+    if (typeof(filter1) != "character"){stop("filter names must be inputted as strings/characters")}
     if (!(variable %in% names(data))){stop("the provided variable name is not found in the data, reexamine the dataframe using summaryData(data = data)")}
-    if (!(filter %in% (eval(parse(text = paste0("unique(GloBI_Curated_sample", "$", variable, ")")))))){stop("the provided filter name is not found in the provided variable, reexamine the variable in the dataframe using summaryData(data = data, variable = variable)")}
+    if (!(filter1 %in% (eval(parse(text = paste0("unique(GloBI_Curated_sample", "$", variable, ")")))))){stop("the provided filter name is not found in the provided variable, reexamine the variable in the dataframe using summaryData(data = data, variable = variable)")}
     places <- data |>
-      filter(.data[[variable]] == filter & coordinated == TRUE) |>
-      select(x, y)}
+      dplyr::filter((eval(parse(text = paste0("GloBI_Curated_sample", "$", variable, "==", filter1)))) & coordinated == TRUE) |>
+      select(x, y)
+    }
 
   lng1 <- min(places$x)
   lng2 <- max(places$x)

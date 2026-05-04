@@ -4,14 +4,14 @@
 \alias{visInteractMap}
 \title{Interactive map detailing locations of bee-plant interactions}
 \usage{
-visInteractMap(data = GloBI_Curated_sample, variable = NULL, filter = NULL)
+visInteractMap(data = GloBI_Curated_sample, variable = NULL, filter1 = NULL)
 }
 \arguments{
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}
 
-\item{variable}{variable to color by, defaults to NULL}
+\item{variable}{variable to filter by, defaults to NULL}
 
-\item{filter}{filter to apply to variable, defaults to NULL}
+\item{filter1}{filter to apply to variable, defaults to NULL}
 }
 \value{
 a leaflet map of all or subset of GloBI dataset provided
