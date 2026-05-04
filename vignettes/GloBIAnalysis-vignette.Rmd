@@ -20,7 +20,7 @@ library(GloBIAnalysis)
 
 # Package uses
 
-This package is designed to aid naïve users in the analysis of the GloBI plant-bee interaction datasets.
+This package is designed to aid naïve users in the analysis of the GloBI plant-bee interaction datasets. Functions include:
 
 -   Summarizing: designed to help the user understand the distribution of the data sets and the biologically-important variables included
 
