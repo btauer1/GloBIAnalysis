@@ -1,0 +1,34 @@
+Package: GloBIAnalysis
+Type: Package
+Title: Analysis of the Global Biotic Interactions curated bee-plant datasets
+Version: 0.1.0
+Authors@R: c(
+    person("Beatrice", "Taur", email = "btaur@smith.edu", role = c("aut", "cre")), 
+    person("Nelle", "Feliciano", email = "nfeliciano@smith.edu", role = "aut"), 
+    person("Meghan", "Gram-Dinger", email = "mgramdinger@smith.edu", role = "aut")
+  )
+Description: This package is used to analyze the Global Biotic Interactions curated bee-plant datasets. 
+    The 3 datasets included in this package examine the interactions between bees and plants across a 
+    range of species and geographic distributions. This package contains functions that make it easy for a 
+    user to view the summary statistics for the bees and plants included in the data, as well as the geographic
+    distribution of the observations and the types of interactions recorded. Interactions between bees and plants
+    can be easily visualized using the functions included in this package, and it also enables a simplified ANOVA 
+    analysis of the affect of bee-plant interactions on bee and plant populations. Data source - zenodo.org/records/18303036
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/btauer1/GloBIAnalysis
+BugReports: https://github.com/btauer1/GloBIAnalysis/issues
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports:
+    dplyr,
+    ggplot2,
+    leaflet
+VignetteBuilder: knitr
