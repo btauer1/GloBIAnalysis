@@ -32,6 +32,12 @@ This package is designed to aid naïve users in the analysis of the GloBI plant-
 
 ## Summarizing the data
 
+I wonder what variables are included in this data?
+
+```{r}
+summaryData()
+```
+
 I wonder what bees are included in this data?
 
 ```{r}
@@ -67,7 +73,7 @@ visBeeSpecies()
 I still don't understand all the different plants included in this data and I want to visualize it.
 
 ```{r}
-visPlantSpecies()
+#visPlantSpecies("Convolvulaceae")
 ```
 
 I still don't understand the different types of bee-plant interactions included in this data and I want to visualize it.
@@ -79,7 +85,7 @@ visInteractType()
 I want to understand where these interactions are taking place... visually!
 
 ```{r}
-visInteractMap()
+#visInteractMap()
 ```
 
 ## Statistical analysis

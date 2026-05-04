@@ -10,8 +10,6 @@ anovaPop(group, level)
 \item{group}{bee or plant, which type of endemicity is being tested}
 
 \item{level}{significance level of ANOVA regression}
-
-\item{data}{GloBI data, defaults to GloBI_Curated_sample}
 }
 \value{
 Prints message saying if ANOVA is significant or not.

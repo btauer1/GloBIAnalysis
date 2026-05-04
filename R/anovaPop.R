@@ -1,13 +1,13 @@
+utils::globalVariables(c("GloBI_Curated_sample"))
+
 #' ANOVA analysis of bee and plant population dynamics
 #'
 #' @description Function that returns if the relationship between interaction type and bee/plant endemicity is significant.
 #' @details Runs two-way ANVOA test with endemicity as the independent variable and interaction type as the dependent variable.
 #' @param group bee or plant, which type of endemicity is being tested
 #' @param level significance level of ANOVA regression
-#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @return Prints message saying if ANOVA is significant or not.
 #' @export
-#' @import stats
 #' @examples
 #' anovaPop("bee", 0.05)
 #' anovaPop("plant", 0.1)

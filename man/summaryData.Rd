@@ -10,6 +10,8 @@ summaryData(data = GloBI_Curated_sample, variable = NULL, print = FALSE)
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}
 
 \item{variable}{Variable to color by, defaults to NULL}
+
+\item{print}{Variable to print, defaults to TRUE}
 }
 \value{
 Returns a list of variables in the GloBI df or if specified

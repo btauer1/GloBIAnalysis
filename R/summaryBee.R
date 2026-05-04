@@ -1,8 +1,9 @@
+utils::globalVariables(c("Var1"))
+
 #' Summary statistics for bees
 #'
 #' @description Function that returns summary of bee observations by species, genus, tribe, and family
 #' @details allows user to input any GloBI dataset.
-#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @return Prints number of unique bee species, genuses, tribes, and families. Also returns a table of the number of observations for each species.
 #' @export
 #' @examples
