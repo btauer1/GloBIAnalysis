@@ -6,7 +6,6 @@ utils::globalVariables(c("GloBI_Curated_sample"))
 #' @details Runs two-way ANVOA test with endemicity as the independent variable and interaction type as the dependent variable.
 #' @param group bee or plant, which type of endemicity is being tested
 #' @param level significance level of ANOVA regression
-#' @param data GloBI data, defaults to GloBI_Curated_sample
 #' @return Prints message saying if ANOVA is significant or not.
 #' @export
 #' @import stats
