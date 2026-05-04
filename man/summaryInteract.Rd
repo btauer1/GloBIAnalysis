@@ -4,7 +4,7 @@
 \alias{summaryInteract}
 \title{Summary statistics for interactions}
 \usage{
-summaryInteract(data = GloBI_Curated_sample)
+summaryInteract()
 }
 \arguments{
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}

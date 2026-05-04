@@ -4,7 +4,7 @@
 \alias{summaryPlant}
 \title{Summary statistics for plants}
 \usage{
-summaryPlant(data = GloBI_Curated_sample)
+summaryPlant()
 }
 \arguments{
 \item{data}{GloBI data, defaults to GloBI_Curated_sample}
