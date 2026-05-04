@@ -1,3 +1,5 @@
+utils::globalVariables(c("GloBI_Curated_sample", "interactionTypeName", "bee_species", "plant_species"))
+#'
 #' Summary statistics for interactions
 #'
 #' @description Function that returns table of observations and species numbers per interaction type.

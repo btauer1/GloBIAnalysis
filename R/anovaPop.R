@@ -1,3 +1,5 @@
+utils::globalVariables(c("GloBI_Curated_sample"))
+
 #' ANOVA analysis of bee and plant population dynamics
 #'
 #' @description Function that returns if the relationship between interaction type and bee/plant endemicity is significant.

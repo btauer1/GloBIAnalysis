@@ -53,7 +53,7 @@ summaryInteract()
 I wonder where in the world this data comes from?
 
 ```{r}
-summaryGeo()
+#summaryGeo()
 ```
 
 ## Visualizing the data
@@ -67,7 +67,7 @@ visBeeSpecies()
 I still don't understand all the different plants included in this data and I want to visualize it.
 
 ```{r}
-visPlantSpecies()
+#visPlantSpecies("Convolvulaceae")
 ```
 
 I still don't understand the different types of bee-plant interactions included in this data and I want to visualize it.
@@ -79,7 +79,7 @@ visInteractType()
 I want to understand where these interactions are taking place... visually!
 
 ```{r}
-visInteractMap()
+#visInteractMap()
 ```
 
 ## Statistical analysis
