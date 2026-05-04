@@ -24,6 +24,6 @@ allows user to input any GloBI dataset for visualization. The leaflet style map 
 }
 \examples{
 visInteractMap()
-visInteractMap(variable = "bee_genus", filter = "Lasioglossum")
+visInteractMap(variable = "bee_genus", filter1 = "Lasioglossum")
 
 }

@@ -13,7 +13,7 @@ utils::globalVariables(c("GloBI_Curated_sample"))
 #' @import dplyr
 #' @examples
 #' visInteractMap()
-#' visInteractMap(variable = "bee_genus", filter = "Lasioglossum")
+#' visInteractMap(variable = "bee_genus", filter1 = "Lasioglossum")
 #'
 
 visInteractMap <- function(data = GloBI_Curated_sample, variable = NULL, filter1 = NULL) {
@@ -30,7 +30,7 @@ visInteractMap <- function(data = GloBI_Curated_sample, variable = NULL, filter1
     if (!(variable %in% names(data))){stop("the provided variable name is not found in the data, reexamine the dataframe using summaryData(data = data)")}
     if (!(filter1 %in% (eval(parse(text = paste0("unique(GloBI_Curated_sample", "$", variable, ")")))))){stop("the provided filter name is not found in the provided variable, reexamine the variable in the dataframe using summaryData(data = data, variable = variable)")}
     places <- data |>
-      dplyr::filter((eval(parse(text = paste0("GloBI_Curated_sample", "$", variable, "==", filter1)))) & coordinated == TRUE) |>
+      dplyr::filter(eval(parse(text = paste0("GloBI_Curated_sample$", variable, "== filter1 & GloBI_Curated_sample$coordinated == TRUE")))) |>
       select(x, y)
     }
 
