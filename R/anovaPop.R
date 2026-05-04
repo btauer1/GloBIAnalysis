@@ -8,7 +8,6 @@ utils::globalVariables(c("GloBI_Curated_sample"))
 #' @param level significance level of ANOVA regression
 #' @return Prints message saying if ANOVA is significant or not.
 #' @export
-#' @import stats
 #' @examples
 #' anovaPop("bee", 0.05)
 #' anovaPop("plant", 0.1)

@@ -32,6 +32,12 @@ This package is designed to aid naïve users in the analysis of the GloBI plant-
 
 ## Summarizing the data
 
+I wonder what variables are included in this data?
+
+```{r}
+summaryData()
+```
+
 I wonder what bees are included in this data?
 
 ```{r}
@@ -53,7 +59,7 @@ summaryInteract()
 I wonder where in the world this data comes from?
 
 ```{r}
-#summaryGeo()
+summaryGeo()
 ```
 
 ## Visualizing the data
