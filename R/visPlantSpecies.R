@@ -1,3 +1,5 @@
+utils::globalVariables(c("plant_family"))
+
 #' Distribution of Plant Species within each Family
 #'
 #' @description This function generates a bar plot of plant species within the plant family chosen by the user.

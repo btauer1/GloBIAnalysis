@@ -1,3 +1,5 @@
+utils::globalVariables(c("bee_family"))
+
 #' Distribution of Bee Species by Family
 #'
 #' @description This function generates a bar plot of bee species within the GloBI_Curated_sample dataset.
