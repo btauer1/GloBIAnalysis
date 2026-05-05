@@ -1,3 +1,5 @@
+utils::globalVariables(c("barplot"))
+
 #' Types and counts of bee-plant interactions
 #'
 #' @description This function generates a bar plot of bee-plant interaction types within the GloBI_Curated_sample dataset.
