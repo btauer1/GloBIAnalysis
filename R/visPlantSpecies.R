@@ -26,6 +26,10 @@ visPlantSpecies <- function(family) {
     stop("Data is unfit for visualization: The Asteraceae family contains 295 unique species")
   }
 
+  if (!(family %in% GloBI_Curated_sample$plant_family)) {
+    stop("The family '", family, "' is not in the dataset.")
+  }
+
   # separate data for specified family
   fam_data <- GloBI_Curated_sample |>
     dplyr::filter(plant_family == family)

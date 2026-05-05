@@ -35,6 +35,11 @@ visBeeSpecies <- function(family = NULL) {
 
   # else show view of specific family
   else {
+
+    if (!(family %in% GloBI_Curated_sample$bee_family)) {
+      stop("The family '", family, "' is not in the dataset.")
+    }
+
     GloBI_Curated_sample |>
       dplyr::filter(bee_family == family) |>
       ggplot2::ggplot(ggplot2::aes(y = bee_species)) +
