@@ -18,7 +18,7 @@ Prints message saying if ANOVA is significant or not.
 Function that returns if the relationship between interaction type and bee/plant endemicity is significant.
 }
 \details{
-Runs two-way ANVOA test with endemicity as the independent variable and interaction type as the dependent variable.
+Runs ANVOA test with endemicity as the independent variable and interaction type as the dependent variable.
 }
 \examples{
 anovaPop("bee", 0.05)
