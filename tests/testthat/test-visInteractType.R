@@ -1,3 +1,5 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("visInteractType works", {
+  GloBI_Curated_sample <<- data.frame(
+    interactionTypeName = c("a", "b", "a"))
+  expect_no_error(visInteractType())
 })
