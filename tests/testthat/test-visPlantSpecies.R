@@ -5,6 +5,7 @@ test_that("visPlantSpecies works", {
   )
   expect_no_error(visPlantSpecies("family1"))
   expect_error(visPlantSpecies("Asteraceae"))
+  expect_error(visPlantSpecies("meow"))
   expect_error(visPlantSpecies(Apiaceae))
   expect_error(visPlantSpecies())
 })
