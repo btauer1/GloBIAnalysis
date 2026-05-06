@@ -30,11 +30,11 @@ Trends in bee-plant interactions (uses curated dataset)
 
 ## Installation
 
-To install this package in R, run the following lines of code:
+To install this package in R, run the following lines of code:  
 `install.packages("GloBIAnalysis")`  
-`library(GloBIAnalysis)`
+`library(GloBIAnalysis)`  
 
 ## Example 
 
-To see an interactive map of where bee-plant interactions are taking place: 
-`visInteractMap()` 
+To see an interactive map of where bee-plant interactions are taking place:   
+`visInteractMap()`  
