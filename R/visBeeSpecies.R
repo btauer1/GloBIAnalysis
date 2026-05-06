@@ -1,3 +1,5 @@
+utils::globalVariables(c("bee_family"))
+
 #' Distribution of Bee Species by Family
 #'
 #' @description This function generates a bar plot of bee species within the GloBI_Curated_sample dataset.
@@ -25,21 +27,26 @@ visBeeSpecies <- function(family = NULL) {
   # if no family argument provided, show general view of bee species & families
   if(is.null(family)) {
     GloBI_Curated_sample |>
-      ggplot(aes(y = bee_species,
+      ggplot2::ggplot(ggplot2::aes(y = bee_species,
                  fill = bee_family)) +
-      labs(title = "Distribution of Bee Species",
+      ggplot2::labs(title = "Distribution of Bee Species",
            y = "Bee Species",
            fill = "Bee Family") +
-      geom_bar()
+      ggplot2::geom_bar()
   }
 
   # else show view of specific family
   else {
+
+    if (!(family %in% GloBI_Curated_sample$bee_family)) {
+      stop("The family '", family, "' is not in the dataset.")
+    }
+
     GloBI_Curated_sample |>
-      filter(bee_family == family) |>
-      ggplot(aes(y = bee_species)) +
-      labs(title = "Distribution of Bee Species",
+      dplyr::filter(bee_family == family) |>
+      ggplot2::ggplot(ggplot2::aes(y = bee_species)) +
+      ggplot2::labs(title = "Distribution of Bee Species",
            y = "Bee Species") +
-      geom_bar()
+      ggplot2::geom_bar()
   }
 }

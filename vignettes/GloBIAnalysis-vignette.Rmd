@@ -8,7 +8,7 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
+knitr::opts_chunk$set( 
   collapse = TRUE,
   comment = "#>"
 )
@@ -20,31 +20,43 @@ library(GloBIAnalysis)
 
 # Package uses
 
-This package is designed to aid naïve users in the analysis of the GloBI plant-bee interaction datasets.
+This package is designed to aid users who are new to data science in R in analyzing the GloBI plant-bee interaction datasets. Functions include:
 
 -   Summarizing: designed to help the user understand the distribution of the data sets and the biologically-important variables included
 
 -   Visualization: designed to help the user create simple visualizations of the different types of bee-plant interactions that are recorded in the data sets
 
--   ANOVA: designed to facilitate easy two-way ANOVA analysis of species interactions in relation to the endemicity of the bees or plants involved
+-   ANOVA: designed to facilitate easy ANOVA analysis of species interactions in relation to the endemicity of the bees or plants involved
 
 # Example uses of functions
 
 ## Summarizing the data
 
-I wonder what bees are included in this data?
+I wonder what variables are included in this data?
+
+```{r}
+summaryData()
+```
+
+That's a lot of variables, what if we just look at one of them... how about `bee_genus`?
+
+```{r}
+summaryData(variable = "bee_genus", print = TRUE)
+```
+
+I'm curious about the bees specifically... what kinds of different bees are included in this data?
 
 ```{r}
 summaryBee()
 ```
 
-I wonder what plants are included in this data?
+No more bees! How can I find out more about the different plants in this data?
 
 ```{r}
 summaryPlant()
 ```
 
-I wonder what types of bee-plant interactions are included in this data?
+This data is all about *interactions* between bees and plants. What are the different types of interactions that we can look at, and how often do these show up in the data?
 
 ```{r}
 summaryInteract()
@@ -58,40 +70,102 @@ summaryGeo()
 
 ## Visualizing the data
 
-I still don't understand all the different bees included in this data and I want to visualize it.
+Sometimes it's easier to understand large amounts of data through visualizations. How can I show the distribution of bee species in this data?
 
 ```{r}
 visBeeSpecies()
 ```
 
-I still don't understand all the different plants included in this data and I want to visualize it.
+There are *so* many different plants! How can I get a better idea of the diversity of plant species in this data? Let's start by just looking at one family...
 
 ```{r}
-visPlantSpecies()
+visPlantSpecies("Rosaceae")
 ```
 
-I still don't understand the different types of bee-plant interactions included in this data and I want to visualize it.
+I still don't understand the different types of bee-plant interactions included in this data, can I see it visually?
 
 ```{r}
 visInteractType()
 ```
 
-I want to understand where these interactions are taking place... visually!
+I want to understand more about where these interactions are taking place. Let's put them on an interactive map so we can explore!
 
 ```{r}
 visInteractMap()
 ```
 
+What if I want to look more at a specific group? In this case, let's look at where bees in the genus *Lasioglossum* were observed.
+
+```{r}
+visInteractMap(variable = "bee_genus", filter = "Lasioglossum")
+```
+
 ## Statistical analysis
 
-I wonder if bee endemicity has a significant relationship with the types of interactions that occur?
+ANOVA regression is an easy statistical test to evaluate if there is a correlation between two variables. In this case, we are curious to find out if certain types of interactions are more common when either the bee or plant is an endemic species (i.e. is native to the ecosystem that they inhabit). Let's look at two examples, one looking at bee endemicity and the other looking at plant endemicity.
+
+Is bee endemicity significant at a confidence level of 0.05?
 
 ```{r}
 anovaPop("bee", 0.05)
 ```
 
-I wonder if plant endemicity has a significant relationship with the types of interactions that occur?
+Is plant endemicity significant at a confidence level of 0.01?
 
 ```{r}
 anovaPop("plant", 0.01)
 ```
+
+# Takeaways: the big picture
+
+You made it to the end! At this point, you should know how to use functions from this package to:
+
+1.  **Summarize** the GloBI interactions data
+
+    -   `summaryData()` to look at the variables included in this data
+
+    -   `summaryBee()` to look at bee species
+
+    -   `summaryPlant()` to look at plant species
+
+    -   `summaryInteract()` to look at bee-plant interactions
+
+    -   `summaryGeo()` to look at the geographical distribution of data
+
+2.  **Visualize** the GloBI interactions data
+
+    -   `visBeeSpecies()` to visualize bee species
+
+    -   `visPlantSpecies()` to visualize plant species
+
+    -   `visInteractType()` to visualize bee-plant interactions
+
+    -   `visInteractMap()` to make an interactive map of where bee-plant interactions are occuring
+
+3.  **Analyze** the GloBi interactions data
+
+    -   `anovaPop()` to find out if bee and plant endemicity is statistically significant
+
+Because there is some overlap in what information is included in different functions, we can combine some functions to get even more information!
+
+## Combining functions
+
+We can combine the different functions that allow us to look at the bee species data in order to get a better understanding of which bee species are present in the data! To start, let's use `summaryData()` to get a list of the unique bee species that show up in the variable `bee_species`:
+
+```{r}
+summaryData(variable = "bee_species", print = TRUE)
+```
+
+This tells us all of the unique bee species that are present, but doesn't tell us how often they show up... To find out how often species show up, lets use `summaryBee()`:
+
+```{r}
+summaryBee()
+```
+
+Now we know that there are 46 different bee species, and by looking through to table we can see which species are the most common. However, the table can be tedious to look through, so let's visualize the data instead using `visBeeSpecies()`!
+
+```{r}
+visBeeSpecies()
+```
+
+Perfect! Now we can easily see that the most common bee species is *Lasioglossum tarsatum*, and overall bees from the family Halictidae are the most commonly observed!

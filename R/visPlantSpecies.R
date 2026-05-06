@@ -1,3 +1,5 @@
+utils::globalVariables(c("plant_family"))
+
 #' Distribution of Plant Species within each Family
 #'
 #' @description This function generates a bar plot of plant species within the plant family chosen by the user.
@@ -26,15 +28,19 @@ visPlantSpecies <- function(family) {
     stop("Data is unfit for visualization: The Asteraceae family contains 295 unique species")
   }
 
+  if (!(family %in% GloBI_Curated_sample$plant_family)) {
+    stop("The family '", family, "' is not in the dataset.")
+  }
+
   # separate data for specified family
   fam_data <- GloBI_Curated_sample |>
-    filter(plant_family == family)
+    dplyr::filter(plant_family == family)
 
   # make bar plot
   fam_data |>
-    ggplot(aes(y = plant_species)) +
-    labs(title = "Distribution of Plant Species",
+    ggplot2::ggplot(ggplot2::aes(y = plant_species)) +
+    ggplot2::labs(title = "Distribution of Plant Species",
          subtitle = paste(family, "family"),
          y = "Plant Species") +
-    geom_bar()
+    ggplot2::geom_bar()
 }
