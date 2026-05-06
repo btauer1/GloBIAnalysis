@@ -1,0 +1,20 @@
+#' GloBI Taxonomic Review
+#'
+#' A data set containing information on the confidence the researchers had in identifying each bee species based on possible sampling biases.
+#'
+#' @format ## `GloBI_taxonomic_review`
+#' A data frame with 78 rows and 10 columns:
+#' \describe{
+#'   \item{bee_family}{Bee family name}
+#'   \item{bee_tribe}{Bee tribe name}
+#'   \item{globi_record_count}{Number of times bee species and family is observed in all GloBI data records}
+#'   \item{globi_num_species}{Number of times bee species is observed in all GloBI data records}
+#'   \item{globi_num_genera}{Number of times bee genus is observed in all GloBI data records}
+#'   \item{globi_percent_records}{Percent of all GloBI observations with given bee species and tribe}
+#'   \item{globi_percent_sp}{Percent of all GloBI observations with given bee species}
+#'   \item{globi_percent_genera}{Percent of all GloBI observations with given bee genus}
+#'   \item{of_global_sp}{Estimated percent of bees worldwide that belong to a given species}
+#'   \item{of_global_gen}{Estimated percent of bees worldwide that belong to a given genus}
+#' }
+#' @source <https://zenodo.org/records/18303036>
+"GloBI_taxonomic_review"
